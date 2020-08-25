@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+       //Crea una aplicación que pida un número y calcule su factorial 
+       //(El factorial de un número es el producto de todos los enteros entre 1 y el propio número y se representa 
+       //por el número seguido de un signo de exclamación. Por ejemplo 5! = 1x2x3x4x5=120),
+
+      //let numero = parseInt(prompt("ingrese un nunmero"));
+    //   let resultado = 1;
+    //   for (let i = 1; i <= numero; i++) {
+           
+    //        resultado = resultado * i;
+    //   }
+    //   console.log(`el factorial de ${numero} es ${resultado}`); 
+
+    /*Ejercicio 2Permalink
+ Crea una aplicación que permita adivinar un número. La aplicación genera un número aleatorio del 1 al 100.
+ A continuación va pidiendo números y va respondiendo si el número a adivinar es mayor o menor que el introducido,
+ a demás de los intentos que te quedan (tienes 10 intentos para acertarlo).
+ El programa termina cuando se acierta el número (además te dice en cuantos intentos lo has acertado),
+ si se llega al limite de intentos te muestra el número que había generado.*/
+
+  const aleatorio = Math.floor(Math.random()*100);
+  const adivinar=50;
+  const intentos=10;
+   do {
+       var pedirN=parseInt(prompt("ingrese numero"));
+       
+            
+                
+           if(pedirN < adivinar ){
+             alert(`el numero es menor al ganador le quedan ${intentos}`)
+           }
+            if(pedirN>adivinar){
+             alert(`el numero es mayor al ganador le quedan ${intentos}`);
+           }
+          
+       
+            
+       
+       
+   } while (pedirN != adivinar){
+       alert("has ganado");
+   };
+   
+   
+
+  
+
+    </script>
+</body>
+</html>

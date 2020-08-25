@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <h1>cajero automatico</h1>
+
+ <script>
+
+  //alert("bienvenido a caja social");
+
+  let usuario = prompt("ingrese su usuario");
+  let clave = parseInt(prompt("ingrese su clave"));
+  let usuar="leonel";
+  let clave1=12345;
+  //let  intentos=3;
+  
+
+     console.log(clave);
+     console.log(usuario);
+
+    if (usuario===usuar && clave===clave1) {
+        console.log("exitoso")
+        
+    }else{
+        console.log("denegado");
+    }
+
+    let meses =["enero","febrero","marzo","abrir","mayo"];
+    let meses1 = meses.length -1;
+    //console.log(meses1);
+    let i =0;
+
+    // while (i < meses1) {
+    //     console.log(meses[i]);
+    //     i++;
+    //}
+
+    for (let i = 0; i<meses1; i++) {
+        console.log(meses[i]);  
+    }
+
+
+
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <h1>hola mundo</h1>
+
+ 
+
+
+ <!-- 11) Programa una función que calcule el factorial de 
+ un número (El factorial de un entero positivo n, se define 
+ como el producto de todos los números enteros positivos desde 1 hasta n),
+ pe. miFuncion(5) devolverá 120. -->
+    <script>
+        function factorial(n) {
+            let contador=1;
+        
+              for (let i = n; i > 1;i--) { 
+                  contador=contador*i; 
+              }
+              console.log(`el factorial de ${n} numero es ${contador}`);
+            
+        }
+
+        factorial(5);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        //Escribe un programa que diga si un número 
+        //introducido por teclado es o no primo. Un número primo es aquel que sólo es divisible
+        // entre él mismo y la unidad. Nota: Es suficiente probar hasta la raíz cuadrada
+        // del número para ver si es divisible por algún otro número.
+
+       let numero=parseInt(prompt("ingrese un numero"));
+     
+       let  contador=0;
+       for (let i = 1; i <=numero; i++) {
+
+           if(numero%i==0){
+              contador++
+           }
+       }
+
+       if(contador>2){
+           console.log("el numero es compuesto");
+       }else{
+           console.log("el numero es primo");
+       }
+     
+    </script>
+</body>
+</html>

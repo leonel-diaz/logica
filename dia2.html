@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+     
+    //  let frase= prompt();
+    //  let vocales=["a","e","i","o","u"];
+
+    //  for (let i = 0; i < frase.length; i++) {
+    //        const e=frase[i];
+    //        if(frase.toUpperCase()===vocales)alert("la cantidiad de vocales son")
+    //  }
+    //  //  alert(frase);
+    var cadena = prompt("Introduce una cadena de texto:");
+    var numchar = cadena.length;    //Devuelve la longitud del string.
+    cadena = cadena.toUpperCase();  //Devuelve el string en mayúsculas.
+    var car;
+    var contador = 0;
+    var i;
+    for (i = 0; i < numchar; i++) {
+        car = cadena.charAt(i);    //recupera el caracter i del string.
+        if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
+            contador++;
+        }
+    }
+         alert("Número de Vocales: " + contador + ".");       
+
+
+
+    </script>
+</body>
+</html>

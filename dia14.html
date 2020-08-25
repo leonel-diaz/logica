@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <!-- 18) Programa una función que dada una cadena de texto cuente el número de vocales
+     y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5. -->
+    <h1>hola mundo</h1>
+
+    <script>
+        
+    const vocales=(texto)=>{
+       var ingrese=prompt("ingrese una palabra");
+       var vocales=["a","e","i","o","u"];
+       for(i=0;i<vocales;i++){
+           if(ingrese===i){
+              console.log(`vocales ${ingrese}`)
+           }else{
+               console.log("no hay vocales")
+           }
+       }
+
+    }
+    vocales();
+    
+
+    </script>
+</body>
+</html>
