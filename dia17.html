@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <!-- 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter,
+    pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']. -->
+
+    <!-- 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) 
+    devolverá Hola Mundo Hola Mundo Hola Mundo. -->
+
+    <script>
+        // const String =(nombre="")=>{
+        //    const r= nombre.split("");       
+        //    console.log(`${r}`);
+        // }
+
+        // String("hola que tal");
+
+        const repetir=(texto="",veses=undefined)=>{ 
+            if(!texto)return console.warn("no ingresaste un texto");
+            if(veses===undefined)return console.warn("no ingresaste el numero de veses a repetir el texto");
+            if(veses===0)return console.error("el numero de vese no puede ser 0");
+            if(Math.sign(veses)===-1)console.error("el numero de veses no puede ser negativo");
+            for (let i = 1; i <= veses; i++){
+                console.info(`${texto},${i}`);
+             }
+
+        }
+        repetir("hola mundo",3);
+
+    </script>
+</body>
+</html>
