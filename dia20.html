@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+     
+    <!-- Programa una función que valide si una palabra o frase dada, es un palíndromo
+    (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true. -->
+
+    <!-- <--8) Programa una función que elimine cierto patrón de caracteres de un texto dado, 
+    pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5. --> 
+    <script>
+   const palindromo=(texto="")=>{
+
+    if(!texto)return console.warn("no ingresaste un texto");
+       const alReves=texto.split("").reverse().join("");
+
+       return(texto===alReves)
+       ?console.info(`si es palindromo,la palabra original ${texto},la palabra al revés ${alReves}`)
+       :console.error(`no es palindromo  la palabra original ${texto},la palbra al revés ${alReves}`)   
+   };
+   palindromo("salas");
+
+
+
+
+    </script>
+</body>
+</html>
