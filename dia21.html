@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <--8) Programa una función que elimine cierto patrón de caracteres de un texto dado, 
+    pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5. --> 
+
+
+    <!-- 10) Programa una función que reciba un número y evalúe si es capicúa o no 
+    (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true. -->
+
+    <script>
+        const eliminar =(texto="",patron="")=>{
+            (!texto)
+            ?console.warn("no ingresaste un texto")
+            :(!patron)
+            ?console.warn("no ingresaste ningun patron de caracter")
+            :console.info(texto.replace(new RegExp(patron,"ig"),""))
+        }
+        eliminar("xyz1,xyz2,xyz3,xyz4,xyz5","xyz");
+
+       const aleatorio=(min,max)=>{
+        console.info(Math.floor(Math.random() * (max - min)) + min);
+
+       // console.info(Math.floor(Math.random() * 100 + 500);
+       }
+       aleatorio(501,600);
+       
+    </script>
+    
+</body>
+</html>
