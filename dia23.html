@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <!-- 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa,
+     pe. miFuncion(0,"C") devolverá 32°F. -->
+
+   
+    <script>
+          const convertirGrados=(gradosCelsius,gradosFahrenheit)=>{
+              if(!gradosFahrenheit)return console.warn("no ingresaste grados fhrenheit");
+              if(!gradosCelsius)return console.warn("no ingresaste grados celsius");
+               
+               // GRADOS CELSIUS A FAHRENHEIT
+               const celsiusAFahrenheit=parseFloat((gradosCelsius*1.8)+32);
+
+               // GRADOS FAHRENHEIT A CELSIUS
+               const gradosFahrenheitACelsius=parseFloat((gradosFahrenheit-32)/1.8);
+
+               console.log(`los ${gradosCelsius} celsius son el grados fharenheit ${celsiusAFahrenheit}`);
+               console.log(`lod grados ${gradosFahrenheit} fahrenheit son el grados celsuis ${gradosFahrenheitACelsius}`);
+               
+          }
+
+      convertirGrados(22,22);
+
+    </script>
+    
+</body>
+</html>
