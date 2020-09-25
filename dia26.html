@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <!-- 19) Programa una función que valide que un texto
+         sea un nombre válido, pe. miFuncion("Jonathan MirCha") 
+        devolverá verdadero. -->
+
+        
+
+        <script>
+        //     const validar =(nombre)=>{
+
+        //         if(!nombre)return console.warn("no ingresaste ningun nombre");
+        //         if(!nombre===typeof Number)return console.warn("no es valido un numero");
+
+        //         console.log(nombre);
+                  
+        //     }
+
+      
+        validarNombre = (nombre = "") => {
+    if (nombre === "") return console.log("Debes ingresar tu nombre");
+  
+    if (typeof nombre !== "string")
+      return "El dato ingresado no es una cadena de texto";
+  
+    const patronNombre = /^[A-Z]{1}[a-z]*\s[A-Z]{1}[a-z]*$/;
+  
+    if (patronNombre.test(nombre)) {
+      return console.log(`El nombre ${nombre} Es Valido`);
+    } else {
+      return console.log(`El nombre ${nombre} No es Valido`);
+    }
+  };
+  
+  validarNombre("Carlos");
+  validarNombre("carlos madrigal");
+  validarNombre("Carlos M@drigal");
+  validarNombre("Carl0s Madrigal");
+  validarNombre("Carlos Madriga!");
+  validarNombre("Carlos Madrigal");
+    
+
+        </script>
+</body>
+</html>

@@ -6,7 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ejercicios dia 23 de septiembre </h1>
     
+    <!-- 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, 
+    pe. miFuncion(1000, 20) devolverá 800. -->
+
+
+    <script>
+        // const compra=(valor,descuento)=>{
+                
+        //         const r=descuento/100*valor;
+        //         console.log(`su compra costo ${valor} pero con el ${descuento}% el total es ${r}`);
+        
+        // }
+        // compra(1000,20);
+
+        // 17) Programa una función que dada una fecha válida determine cuantos años han
+        //  pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+         const fecha=(fecha=undefined)=>{
+            if(fecha===undefined)return console.warn("no ingresaste la fecha");
+            if((!fecha instanceof Date))return console.warn("el valor que ingresaste no es una fecha valida");
+
+           let hoyMenosFecha = new Date().getTime()-fecha.getTime();
+           let  aniosEnMS=1000*60*60*24*365;
+           let  aniosHumanos=Math.floor(hoyMenosFecha/aniosEnMS);
+
+                  
+          return (Math.sign(aniosHumanos)===-1) 
+            ?console.info(`faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+            :(Math.sign(aniosHumanos===1))
+            ?console.info(`han pasado ${aniosHumanos} años desde ${fecha.getFullYear()}`)
+            :console.info(`estamos en el año actual ${fecha.getFullYear()}`)
+           
+         }
+       
+         fecha(1994,06,21);
+      
+
+    </script>
+     
+
 </body>
 </html>
