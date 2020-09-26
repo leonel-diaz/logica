@@ -11,16 +11,29 @@
     con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25]. -->
 
     <script>
+ 
+//  var numbers = [65, 44, 12, 4];
+// var newarray = numbers.map(myFunction)
 
-        const elevarArray=(arreglo)=>{
-            if(!arreglo)return console.error("ingrese sus numeros");
-              console.log(arreglo);
-            //  for (let i = 0; i < arreglo; i++) {
-            //        console.log(i);   
-            //  }
-            
-        }
-        elevarArray(12345);
+// function myFunction(num) {
+//   return num * 10;
+// }
+
+// document.getElementById("demo").innerHTML = newarray;
+
+const elevar=(arreglo=[])=>{
+
+    
+    for(i=0;i<arreglo.length;i++){ 
+      // var r = Math.pow(arreglo[i],2);
+       var newarray=arreglo.map(el=>el*el);
+       console.log(`el arreglo principal es ${arreglo} y el segundo arreglo es ${newarray} `);
+   }
+}
+
+elevar([1,4,5,6,7,10]);
+    
+        
 
     </script>
 </body>
