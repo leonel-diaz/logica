@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array,
+     pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60]. -->
+
+      <script>
+
+
+   const mayorMenor=(arreglo)=>{
+     
+     if(!arreglo) return console.error("no ingreso ningun valor");
+     if(!(arreglo instanceof Array))return console.error("el valor ingresado no es un arreglo");
+     if(arreglo.length===0)return console.error("el arreglor esta vacio");
+        
+      for (const num of arreglo) {
+          if(typeof num !== "number")return console.log(`el valor ${num} ingresado no es un numero`);
+      }  
+        return console.log(`el valor mayor es ${Math.max(...arreglo)} y el menor es ${Math.min(...arreglo)}`);
+   }
+
+  mayorMenor([2,3,4]);
+  mayorMenor();
+  mayorMenor([]);
+  mayorMenor([2,3,4,true]);
+    
+
+
+  
+  
+      </script>
+
+
+
+</body>
+</html>
