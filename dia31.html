@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <script>
+    //     25) Programa una función que dado un arreglo de elementos, elimine los duplicados,
+    //      pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+
+    //  26) Programa una función que dado un arreglo de números obtenga el promedio, 
+    //   pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+     const duplicados=(arreglo)=>{
+
+        if (!arreglo) return console.error("no ingreso ningun valor");
+        if (!(arreglo instanceof Array))return console.error("el valor ingresado no es un arreglo");
+        if (arreglo.length === 0) return console.error("el arreglor esta vacio");
+        if (arreglo.length===1)return console.error("el arreglo tiene que tener minimo 2 caracteres");
+         
+        //   return console.info({
+        //       original:arreglo,
+        //       sinDuplicados:arreglo.filter((value,index,self)=>self.indexOf(value)===index)
+        //   })   
+        return console.info({
+            original:arreglo,
+            sinDuplicados:[...new Set(arreglo)]
+        })
+
+     }
+
+     duplicados();
+     duplicados([]);
+     duplicados([1]);
+     duplicados([1,2,true,1,false,true,1,2,false]);
+
+
+
+
+
+    </script>
+</body>
+</html>
