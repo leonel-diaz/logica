@@ -6,10 +6,189 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- // var total = [0, 1, 2, 3].reduce(function(a, b){ return a + b; });
+    //  console.log(total/3);
     
+          
+
+             // 27) Programa una clase llamada Pelicula.
+
+//     La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB,
+        // titulo, director, año de estreno, país o países de origen, 
+        // géneros y calificación en IMBD.
+//   - Todos los datos del objeto son obligatorios.
+//   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+//      7 restantes números.
+//   - Valida que el título no rebase los 100 caracteres.
+//   - Valida que el director no rebase los 50 caracteres.
+//   - Valida que el año de estreno sea un número entero de 4 dígitos.
+//   - Valida que el país o paises sea introducidos en forma de arreglo.
+//   - Valida que los géneros sean introducidos en forma de arreglo.
+//   - Valida que los géneros introducidos esten dentro de los géneros 
+//      aceptados*.
+//   - Crea un método estático que devuelva los géneros aceptados*.
+//   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+//     decimal de una posición.
+//   - Crea un método que devuelva toda la ficha técnica de la película.
+//   - Apartir de un arreglo con la información de 3 películas genera 3 
+//     instancias de la clase de forma automatizada e imprime la ficha técnica 
+//     de cada película.
+
+// * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western. -->
 
     <script>
+
+         class pelicula{
+             
+           constructor({id,titulo,direcctor,estreno,pais,generos,calificacion}){
+               this.id=id;
+               this.titulo=titulo;
+               this.direcctor=direcctor;
+               this.estreno=estreno;
+               this.pais=pais;
+               this.generos=generos;
+               this.calificacion=calificacion;
+
+               this.validarIMDB(id);
+               this.validarTitulo(titulo);
+               this.validarDirector(direcctor);
+               this.validarEstreno(estreno);
+               this.validarPais(pais);
+               this.validarGeneros(generos);
+               this.validarCalificacion(calificacion);
+               
+           }
+           static get listaGenero(){
+               return["Action","Adult", "Adventure"," Animation"," Biography"," Comedy"," Crime"," Documentary" ,"Drama",
+                "Family", "Fantasy", "Film Noir", "Game-Show", "History"," Horror"," Musical"," Music"," Mystery"," News",
+                 "Reality-TV", "Romance"," Sci-Fi", "Short, Sport"," Talk-Show", "Thriller","War, Western"];
+           }
+           static generosAceptados(){
+               return console.info(`los generos aceptados son :${pelicula.listaGenero.join(",")}`)
+           }
+        //    metodo validar 
+           validarCadena(propiedad,valor){   
+              if (!valor) return console.warn(`${propiedad} "${valor}"esta vacio`);
+              if(typeof valor !== "string" )return console.error(`${propiedad}"${valor}"ingresado no es una cadena de texto`);
+              return true;
+           }
+           //validar longitud 
+           validarLongitudCadena(propiedad,valor,longitud){
+               if(valor.length>longitud)return console.error(`${propiedad}"${valor}"exede el numero
+                caracteres permitidos (${longitud})`);
+                return true;
+           }
+           validarNumero(propiedad,valor){
+             if(!valor)return console.warn(`${propiedad} "${valor}"ingresado no es un numero`);
+             if(typeof valor !== "number")return console.error(`${propiedad} "${valor}"ingresado no es un numero`);
+             return true;
+           }
+           validarArreglo(propiedad,valor){
+            if (!valor) return console.warn(`${propiedad} "${valor}"esta vacio`);
+            if (!(valor instanceof Array))return console.error("el valor ingresado no es un arreglo");
+            if (valor.length === 0)return console.error("el arreglor esta vacio");
+            for (const cadena of valor){
+            if (typeof cadena !== "string") 
+            return console.log(`el valor ${cadena} ingresado no es una cadena de texto`);
+            }
+             return true;
+           }
+
+           validarIMDB(id){
+               if(this.validarCadena("IMDB id",id))
+                   if(!/([a-z]){2}([0-9]){7}$/.test(id))
+                       return console.error(`IMDB id "${id},no es valido debe tener 9 caracteres,y las 2
+                        primeras en mayusculas,los 7 numeros restantes "`);       
+           }
+
+           validarTitulo(titulo){
+               if(this.validarCadena("Titulo",titulo)){
+                this.validarLongitudCadena("Titulo",titulo,100)
+               } 
+
+         }
+           validarDirector(direcctor){
+               if(this.validarCadena("Director",direcctor)){
+                this.validarLongitudCadena("Director",direcctor,50)
+               }          
+        }
+           validarEstreno(estreno){
+             if(this.validarNumero("Año de estreno",estreno))
+                if(!/^([0-9]){4}$/.test(estreno))
+                return console.error(`año de estreno "${estreno},no es valido debe ser un numero de 4 digitos "`);
+               
+      }
+
+         validarPais(pais){
+             this.validarArreglo("pais",pais);
+         }
+         validarGeneros(generos){
+            if(this.validarArreglo("generos",generos)){
+                for(const genero of generos) {
+                   //  console.log(genero,pelicula.listaGenero.includes(genero));
+                     if(!pelicula.listaGenero.includes(genero)){
+                        console.error(`generos incorrectos "${generos.join(",")}`);
+                        pelicula.generosAceptados();
+                    }
+                }
+                
+            }
+         }
+
+         validarCalificacion(calificacion){
+             if(this.validarNumero("Calificacion",calificacion))
+               return(calificacion < 0 || calificacion >10)
+                ?console.error(`la calificacion tiene que estar en un rango de 0 a 10`)
+                :this.calificacion=calificacion.toFixed(1);
+               
+      }
+
+      fichaTecnica(){
+          console.info(`"ficha técnica:\n titulo:${this.titulo}"\n direcctor${this.direcctor}"\n Año:${this.estreno}
+          \n estreno ${this.estreno}"\n pais${this.pais.join(",")}\Generos ${this.generos.join(",")} \n Calificacion ${this.calificacion}
+          \n IMDB id ${this.id}`);
+      }
+
         
+ }      
+    //pelicula.generosAceptados();
+    //    const peli = new pelicula({
+    //      id:"tt1234568",
+    //      titulo:"titulo de la peli",
+    //      direcctor:"leonel diaz",
+    //      estreno:2020,
+    //      pais:["colombia","mexico"],
+    //      generos:["Romance","Adult"],
+    //      calificacion:5.789
+        
+    //    });
+
+    //    peli.fichaTecnica();
+
+    const misPelis=[
+     {
+      id:"tt3456789",
+      titulo:"rapido y furioso",
+      direcctor:"leonel diaz",
+      estreno:2011,
+      pais:["usa","colombia","españa"],
+      generos:["Action"],
+      calificacion:9.1
+    },
+    {
+      id:"tt0987654",
+      titulo:"aleta en lo prfundo",
+      direcctor:"michael with",
+      estreno:2014,
+      pais:["portugal","china","japon"],
+      generos:["Action"],
+      calificacion:9.1
+    },
+    ]
+    misPelis.forEach(el=>{
+        new pelicula(el).fichaTecnica();
+    })
+
     </script>
 </body>
 </html>
